@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "c23382b8-ae2c-4a3f-9a87-13ec9bee73d7",
+		"name": "Safe Browsing API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25490335",
+		"_collection_link": "https://restless-rocket-378608.postman.co/workspace/%25D0%259F%25D1%2580%25D0%25BE%25D0%25B4%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25BA%25D0%25B0-%25D0%25B4%25D0%25BE%25D0%25BC%25D0%25B0%25D1%2588%25D0%25BA%25D0%25B0~25353dca-ba75-4329-9bfc-eef1f7d666f6/collection/25490335-c23382b8-ae2c-4a3f-9a87-13ec9bee73d7?action=share&source=collection_link&creator=25490335"
+	},
+	"item": [
+		{
+			"name": "Получение списков Safe Browsing",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sba.yandex.net/v4/threatLists",
+					"protocol": "https",
+					"host": [
+						"sba",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v4",
+						"threatLists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка URL-1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"client\": {\r\n    \"clientId\": \"Fonfonk\",\r\n    \"clientVersion\": \"1.1.1\"\r\n  },\r\n  \"threatInfo\": {\r\n    \"threatTypes\": [\"MALWARE\", \"SOCIAL_ENGINEERING\"],\r\n    \"platformTypes\": [\"ANY_PLATFORM\"],\r\n    \"threatEntryTypes\": [\"URL\"],\r\n    \"threatEntries\": [\r\n      {\"url\": \"http://malware-driveby.test.safebrowsing.yandex\"}\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sba.yandex.net/v4/threatMatches:find?key={{key}}",
+					"protocol": "https",
+					"host": [
+						"sba",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v4",
+						"threatMatches:find"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка URL-2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"client\": {\r\n    \"clientId\": \"Fonfonk\",\r\n    \"clientVersion\": \"1.1.1\"\r\n  },\r\n  \"threatInfo\": {\r\n    \"threatTypes\": [\"ANY\"],\r\n    \"platformTypes\": [\"ANY_PLATFORM\"],\r\n    \"threatEntryTypes\": [\"URL\"],\r\n    \"threatEntries\": [\r\n      {\"url\": \"https://mail.yandex.ru\"}\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sba.yandex.net/v4/threatMatches:find?key={{key}}",
+					"protocol": "https",
+					"host": [
+						"sba",
+						"yandex",
+						"net"
+					],
+					"path": [
+						"v4",
+						"threatMatches:find"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "key",
+			"value": "a0ef6ad0-1735-4f5c-bdff-fa9ea916df33",
+			"type": "string"
+		}
+	]
+}
