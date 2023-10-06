@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "2202d216-a6c8-4522-ba98-8cf1a5eb0426",
+		"name": "Читай-Город",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25490335",
+		"_collection_link": "https://restless-rocket-378608.postman.co/workspace/%25D0%259F%25D1%2580%25D0%25BE%25D0%25B4%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25BA%25D0%25B0-%25D0%25B4%25D0%25BE%25D0%25BC%25D0%25B0%25D1%2588%25D0%25BA%25D0%25B0~25353dca-ba75-4329-9bfc-eef1f7d666f6/collection/25490335-2202d216-a6c8-4522-ba98-8cf1a5eb0426?action=share&source=collection_link&creator=25490335"
+	},
+	"item": [
+		{
+			"name": "Добавление новой книги",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 2869449,\r\n  \"adData\": {\r\n    \"item_list_name\": \"books-series-slug\",\r\n    \"product_shelf\": \"\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart/product",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение количества",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\": 85139544,\r\n    \"quantity\": 2\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр товара в корзине",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cost\": 960,\r\n  \"costWithSale\": 960,\r\n  \"costWithBonuses\": 960,\r\n  \"discount\": 0,\r\n  \"weight\": 519,\r\n  \"addBonuses\": 29,\r\n  \"promoCode\": null,\r\n  \"products\": [\r\n    {\r\n      \"title\": \"Человек-бензопила. Книга 1. Пес и бензопила. Бензопила против нетопыря\",\r\n      \"authors\": [\r\n        {\r\n          \"id\": 569516,\r\n          \"firstName\": \"Тацуки\",\r\n          \"middleName\": \"\",\r\n          \"lastName\": \"Фудзимото\",\r\n          \"url\": \"fudzimoto-tacuki-569516\",\r\n          \"isForeignAgent\": false\r\n        }\r\n      ],\r\n      \"coauthors\": [],\r\n      \"goodsId\": 2869449,\r\n      \"id\": 85139544,\r\n      \"stock\": 1090,\r\n      \"quantity\": 1,\r\n      \"fullPrice\": 960,\r\n      \"weight\": 519,\r\n      \"url\": \"product/chelovek-benzopila-kniga-1-pes-i-benzopila-benzopila-protiv-netopyrya-2869449\",\r\n      \"publisher\": \"Азбука\",\r\n      \"picture\": \"nomenclature/28/694/2869449.jpg\",\r\n      \"sale\": false,\r\n      \"preOrder\": false,\r\n      \"isBookmarks\": false,\r\n      \"price\": 960,\r\n      \"inSubscription\": false,\r\n      \"cost\": 960,\r\n      \"disabledBonuses\": false,\r\n      \"fullCost\": 960,\r\n      \"isMagic\": false,\r\n      \"nForM\": null,\r\n      \"status\": null,\r\n      \"category\": {\r\n        \"id\": 110064,\r\n        \"title\": \"Манга\",\r\n        \"url\": \"books/manga-110064\",\r\n        \"slug\": \"manga-110064\"\r\n      },\r\n      \"adData\": {\r\n        \"item_list_name\": \"books-series-slug\",\r\n        \"product_shelf\": \"\"\r\n      }\r\n    }\r\n  ],\r\n  \"disabledProducts\": [],\r\n  \"preorderProducts\": [],\r\n  \"gifts\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://web-gate.chitai-gorod.ru/api/v1/cart/product/85139544",
+					"protocol": "https",
+					"host": [
+						"web-gate",
+						"chitai-gorod",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"cart",
+						"product",
+						"85139544"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3VzZXItcmlnaHQiLCJzdWIiOjE5OTMxNjM0LCJpYXQiOjE2OTY0MzY4MTYsImV4cCI6MTY5NjQ0MDQxNiwidHlwZSI6MjB9.SuhvKWRtG5duuCAb1crn3mJoXCq9x0EnW3bJJiYCZQM",
+			"type": "string"
+		}
+	]
+}
